@@ -257,7 +257,7 @@ html, body {
 .tab-icon {
   width: 20px;
   height: 20px;
-  background-color: rgba(255, 154, 92, 0.55);
+  background-color: #C97B4E;
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
