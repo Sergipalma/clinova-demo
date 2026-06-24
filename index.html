@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clinova — Prototipo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="topbar" id="topbar">
+    <button class="back-btn" id="backBtn" aria-label="Volver">&#8249;</button>
+    <div class="brand" id="brand">
+      <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="24" fill="#3D1F0F"/>
+        <path d="M24 12c6 0 10 4 10 9s-3.5 8-8 8-7-3-7-6.2 2.4-5.3 5.3-5.3c2.3 0 4.2 1.6 4.2 3.6 0 1.6-1.2 2.7-2.6 2.7-1 0-1.8-.6-1.8-1.5"
+          fill="none" stroke="#FF7A33" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">Clinova</span>
+    </div>
+    <h1 class="screen-title" id="screenTitle"></h1>
+  </header>
+
+  <main class="view active" id="view-pautas-list" data-title="">
+    <section class="list-section">
+      <h2 class="section-heading">Tus pautas</h2>
+      <div id="pautasList" class="card-list"></div>
+    </section>
+  </main>
+
+  <main class="view" id="view-pauta-detail" data-title="Detalle de la pauta">
+    <section class="detail-section">
+      <div class="tips" id="pautaTips"></div>
+      <h2 class="section-heading" id="pautaDetailTitle"></h2>
+      <div id="ejerciciosList" class="exercise-list"></div>
+    </section>
+  </main>
+
+  <main class="view" id="view-reservas-list" data-title="">
+    <section class="list-section">
+      <div class="list-header-row">
+        <h2 class="section-heading">Tus citas</h2>
+        <button class="btn-primary btn-small" id="btnNuevaReserva">+ Reservar</button>
+      </div>
+      <div id="reservasList" class="card-list"></div>
+    </section>
+  </main>
+
+  <main class="view" id="view-reserva-nueva" data-title="Reservar cita">
+    <section class="detail-section">
+
+      <div class="flow-step" id="step-fecha">
+        <p class="step-label">1. Elige un día</p>
+        <div id="fechaChips" class="chip-row"></div>
+        <button class="btn-primary" id="btnFechaSiguiente" disabled>Siguiente</button>
+      </div>
+
+      <div class="flow-step hidden" id="step-hora">
+        <p class="step-label">2. Elige una hora</p>
+        <div id="horaChips" class="chip-row"></div>
+        <button class="btn-primary" id="btnConfirmarReserva" disabled>Confirmar reserva</button>
+      </div>
+
+      <div class="flow-step hidden" id="step-confirmacion">
+        <div class="confirm-box">
+          <div class="confirm-icon">&#10003;</div>
+          <p class="confirm-title">¡Cita reservada!</p>
+          <p class="confirm-detail" id="confirmDetail"></p>
+        </div>
+        <button class="btn-primary" id="btnVolverCitas">Volver a mis citas</button>
+      </div>
+
+    </section>
+  </main>
+
+  <nav class="tabbar" id="tabbar">
+    <button class="tab-btn active" data-view="pautas-list">
+      <span class="tab-icon">&#128221;</span>
+      <span>Pautas</span>
+    </button>
+    <button class="tab-btn" data-view="reservas-list">
+      <span class="tab-icon">&#128197;</span>
+      <span>Reservas</span>
+    </button>
+  </nav>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-sheet">
+      <p class="modal-title" id="modalTitle"></p>
+      <button class="modal-action" id="modalReprogramar">Reprogramar</button>
+      <button class="modal-action modal-danger" id="modalCancelar">Cancelar cita</button>
+      <button class="modal-action modal-cerrar" id="modalCerrar">Cerrar</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
