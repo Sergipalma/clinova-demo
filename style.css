@@ -253,10 +253,11 @@ html, body {
   cursor: pointer;
 }
 .tab-btn.active { color: var(--accent); }
+.tab-btn.active .tab-icon { background-color: var(--accent); }
 .tab-icon {
   width: 20px;
   height: 20px;
-  background-color: currentColor;
+  background-color: rgba(255, 154, 92, 0.55);
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
