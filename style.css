@@ -253,7 +253,19 @@ html, body {
   cursor: pointer;
 }
 .tab-btn.active { color: var(--accent); }
-.tab-icon { font-size: 20px; }
+.tab-icon {
+  width: 20px;
+  height: 20px;
+  background-color: currentColor;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+.icon-pautas { -webkit-mask-image: url('icons/lista.png'); mask-image: url('icons/lista.png'); }
+.icon-reservas { -webkit-mask-image: url('icons/calendario.png'); mask-image: url('icons/calendario.png'); }
 
 /* Modal */
 .modal-overlay {
